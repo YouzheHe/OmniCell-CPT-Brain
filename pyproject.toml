@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnicell-nvu"
+version = "0.1.0"
+description = "OmniCell-NVU continual pretraining and AD/NVU evaluation code"
+requires-python = ">=3.9"
+dependencies = [
+  "torch",
+  "transformers",
+  "safetensors",
+  "numpy",
+  "pandas",
+  "scipy",
+  "scikit-learn",
+  "anndata",
+  "matplotlib",
+  "tqdm",
+]
+
+[tool.setuptools.packages.find]
+include = ["omnicell_hf*"]

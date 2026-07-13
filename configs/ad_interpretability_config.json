@@ -1,0 +1,53 @@
+{
+  "project_name": "BI_AD_representation_interpretability",
+  "remote_project_dir": "${OMNICELL_NVU_ROOT}/projects/BI",
+  "work_root": "${OMNICELL_NVU_ROOT}",
+  "dataset_root": "${OMNICELL_NVU_ROOT}/NVU_hyz",
+  "source_project": "${OMNICELL_NVU_ROOT}/projects/nvu_vascular",
+  "inputs": {
+    "ad_hip_allcell_index": "projects/nvu_vascular/results/ad_hip_allcell_index/ad_hip_all_cells.parquet",
+    "ad_hip_allcell_embeddings": "projects/nvu_vascular/results/ad_hip_allcell_embeddings",
+    "vascular_anchor_table": "projects/nvu_vascular/results/vascular_recluster_by_modality/vascular_cells_clustered_annotated.parquet",
+    "abeta_plaque_coordinates": "projects/nvu_vascular/figures/figure4_abeta_spatial/source_data/abeta_plaque_mask_pixels_long.csv"
+  },
+  "outputs": {
+    "results_dir": "projects/BI/results/ad_representation_interpretability",
+    "figures_dir": "projects/BI/figures/ad_representation_interpretability",
+    "source_data_dir": "projects/BI/figures/ad_representation_interpretability/source_data"
+  },
+  "analysis_labels": {
+    "condition_column": "condition_inferred",
+    "positive_condition": "AD",
+    "negative_condition": "Control",
+    "group_columns": ["sample_id", "batch_id"],
+    "cell_type_column": "broad_celltype",
+    "modality_column": "modality"
+  },
+  "cell_type_focus": [
+    "Endothelial",
+    "Pericyte/mural",
+    "VLMC/fibroblast",
+    "Astrocyte",
+    "Microglia/immune",
+    "Oligodendrocyte",
+    "OPC",
+    "Excitatory neuron",
+    "Inhibitory neuron"
+  ],
+  "modules": {
+    "bbb_endothelial_barrier": ["CLDN5", "SLC2A1", "ABCB1", "MFSD2A", "KDR", "FLT1", "PECAM1", "VWF"],
+    "pericyte_mural_coverage": ["PDGFRB", "RGS5", "CSPG4", "ABCC9", "KCNJ8", "ACTA2", "TAGLN", "MYH11"],
+    "matrix_remodeling": ["COL1A1", "COL1A2", "COL3A1", "DCN", "LUM", "FN1", "MMP2", "TIMP1"],
+    "vascular_inflammation": ["ICAM1", "VCAM1", "CCL2", "CXCL12", "HLA-A", "HLA-B", "HLA-DRA", "C1QA", "C1QB", "C1QC"],
+    "astrocyte_reactivity_endfeet": ["AQP4", "GFAP", "SLC1A2", "SLC1A3", "APOE", "CLU"],
+    "microglial_ad_response": ["APOE", "TREM2", "TYROBP", "LPL", "C1QA", "C1QB", "C1QC", "ITGAM"],
+    "neuronal_synaptic_ad_stress": ["SNAP25", "SYT1", "SYN1", "SLC17A7", "GAD1", "GAD2", "GRIN1", "GRIA1", "MAPT", "APP", "BACE1", "PSEN1"],
+    "neuronal_metabolic_stress": ["NDUFA4", "COX4I1", "COX6A1", "COX7C", "ATP5F1A", "ATP5MC3", "SOD1", "PRDX1", "HSP90AA1", "HSPA8", "CRYAB", "FKBP5"]
+  },
+  "recommended_statistics": {
+    "disease_probe": "Group-held-out cross-validation using sample/chip groups; report AUROC and balanced accuracy.",
+    "cell_type_axis": "Compute AD-axis scores within each broad cell type; summarize by sample/chip before testing.",
+    "spatial_validation": "Use chip/sample as the independent unit; anchor-level maps are visualization only.",
+    "confounding_checks": ["modality", "batch_id", "age_years", "brain_region1_en"]
+  }
+}

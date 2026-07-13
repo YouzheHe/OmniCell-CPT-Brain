@@ -1,0 +1,67 @@
+{
+  "endothelial_barrier": [
+    "CLDN5",
+    "SLC2A1",
+    "ABCB1",
+    "MFSD2A",
+    "KDR",
+    "FLT1",
+    "PECAM1",
+    "VWF",
+    "ESAM",
+    "ITM2A"
+  ],
+  "pericyte_coverage": [
+    "PDGFRB",
+    "RGS5",
+    "CSPG4",
+    "ABCC9",
+    "KCNJ8",
+    "NOTCH3",
+    "MCAM",
+    "COX4I2"
+  ],
+  "smooth_muscle_remodeling": [
+    "ACTA2",
+    "TAGLN",
+    "MYH11",
+    "CNN1",
+    "MYLK",
+    "TPM2",
+    "COL1A1",
+    "COL1A2"
+  ],
+  "vlmc_fibroblast_matrix": [
+    "DCN",
+    "LUM",
+    "COL1A1",
+    "COL1A2",
+    "COL3A1",
+    "PDGFRA",
+    "ABCA8",
+    "CFD"
+  ],
+  "vascular_inflammation": [
+    "ICAM1",
+    "VCAM1",
+    "SELE",
+    "CCL2",
+    "CXCL12",
+    "HLA-DRA",
+    "HLA-DRB1",
+    "C1QA",
+    "C1QB",
+    "C1QC",
+    "APOE"
+  ],
+  "astrocyte_endfeet": [
+    "AQP4",
+    "SLC1A2",
+    "SLC1A3",
+    "GJA1",
+    "MLC1",
+    "AGT",
+    "ALDH1L1",
+    "GFAP"
+  ]
+}

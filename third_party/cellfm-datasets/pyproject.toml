@@ -1,0 +1,83 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cellfm-datasets"
+version = "0.1.1"
+description = "Memmap-backed Hugging Face dataset adapters for single-cell and spatial transcriptomics foundation model pretraining."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+  {name = "Jiangshuan Pang"},
+]
+keywords = [
+  "single-cell",
+  "spatial-transcriptomics",
+  "huggingface-datasets",
+  "memmap",
+  "foundation-models",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+convert = [
+  "anndata>=0.10",
+  "pyarrow>=15",
+]
+hf = [
+  "datasets>=2.19",
+  "huggingface_hub>=0.25",
+  "pyarrow>=15",
+]
+benchmark = [
+  "anndata>=0.10",
+  "datasets>=2.19",
+  "huggingface_hub>=0.25",
+  "pyarrow>=15",
+]
+plot = [
+  "matplotlib>=3.10",
+]
+torch = [
+  "torch>=2.2",
+]
+dev = [
+  "anndata>=0.10",
+  "build>=1.2",
+  "datasets>=2.19",
+  "huggingface_hub>=0.25",
+  "matplotlib>=3.10",
+  "pyarrow>=15",
+  "pytest>=8.2",
+]
+
+[project.scripts]
+cellfm-dataset = "cellfm_dataset.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/PangJiangShuan/cellfm-datasets"
+Repository = "https://github.com/PangJiangShuan/cellfm-datasets"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cellfm_dataset"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
