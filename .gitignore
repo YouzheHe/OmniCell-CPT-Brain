@@ -36,7 +36,7 @@ venv/
 *.zip
 *.pdf
 *.png
-!assets/omnicell-cpt-brain-overview.png
+!assets/omnicell-cpt-humanbrain-overview.png
 *.jpg
 *.jpeg
 *.svg

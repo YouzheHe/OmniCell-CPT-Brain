@@ -1,8 +1,8 @@
-# OmniCell-CPT-HuamnBrain
+# OmniCell-CPT-HumanBrain
 
-![OmniCell-CPT-HuamnBrain overview](assets/omnicell-cpt-HuamnBrain-overview.png)
+![OmniCell-CPT-HumanBrain overview](assets/omnicell-cpt-humanbrain-overview.png)
 
-OmniCell-CPT-HuamnBrain contains the release code for brain-focused continual pretraining and downstream evaluation with OmniCell-CPT. The repository is organized as a compact publication-facing code package: model wrappers, training entry points, and evaluation scripts are kept, while large datasets, checkpoints, generated figures, and internal workflow notes are excluded.
+OmniCell-CPT-HumanBrain contains the release code for brain-focused continual pretraining and downstream evaluation with OmniCell-CPT. The repository is organized as a compact publication-facing code package: model wrappers, training entry points, and evaluation scripts are kept, while large datasets, checkpoints, generated figures, and internal workflow notes are excluded.
 
 The code supports four linked tasks:
 
@@ -77,4 +77,4 @@ This repository contains code and the OmniCell vocabulary asset only. It does no
 
 ## Citation
 
-Please cite the associated OmniCell-CPT-Brain manuscript when using this code. A formal citation block can be added here after publication.
+Please cite the associated OmniCell-CPT-HumanBrain manuscript when using this code. A formal citation block can be added here after publication.

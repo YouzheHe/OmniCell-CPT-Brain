@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "omnicell-cpt-brain"
+name = "omnicell-cpt-humanbrain"
 version = "0.1.0"
-description = "OmniCell-CPT-Brain continual pretraining and downstream brain evaluation code"
+description = "OmniCell-CPT-HumanBrain continual pretraining and downstream brain evaluation code"
 requires-python = ">=3.9"
 dependencies = [
   "torch",
