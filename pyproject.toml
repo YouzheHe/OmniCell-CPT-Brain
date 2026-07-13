@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "omnicell-nvu"
+name = "omnicell-cpt-brain"
 version = "0.1.0"
-description = "OmniCell-NVU continual pretraining and AD/NVU evaluation code"
+description = "OmniCell-CPT-Brain continual pretraining and downstream brain evaluation code"
 requires-python = ">=3.9"
 dependencies = [
   "torch",
