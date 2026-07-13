@@ -2,14 +2,16 @@
 
 ![OmniCell-CPT-HumanBrain overview](assets/omnicell-cpt-humanbrain-overview.png)
 
-OmniCell-CPT-HumanBrain contains the release code for brain-focused continual pretraining and downstream evaluation with OmniCell-CPT. The repository is organized as a compact publication-facing code package: model wrappers, training entry points, and evaluation scripts are kept, while large datasets, checkpoints, generated figures, and internal workflow notes are excluded.
+OmniCell-CPT-HumanBrain is a continual-pretraining and evaluation framework for human brain transcriptomic representation learning. It harmonizes 17,169,400 public human brain profiles, including 11,496,206 single-cell or single-nucleus profiles and 5,673,194 spatially resolved entries, into a unified sparse memmap resource for OmniCell-CPT training and downstream analysis.
 
-The code supports four linked tasks:
+The reported Brain Informatics analyses evaluate whether one representation can support human brain atlas organization, section-disjoint cell annotation, spatial cell annotation and sample-level Alzheimer's disease (AD) state modeling. OmniCell-CPT-HumanBrain achieved strong held-out annotation performance across human single-cell/single-nucleus and spatial benchmarks. In the balanced all44 human brain cohort, sample-level AD-associated state modeling reached AUROC 0.893 with OmniCell-CPT latent summaries, compared with 0.731 for raw gene SVD under leave-one-sample-out evaluation.
+
+This repository releases the code used for four linked tasks:
 
 1. Convert and run OmniCell checkpoints through a Hugging Face-style interface.
-2. Continue pretraining OmniCell on CSR memmap single-cell and spatial transcriptomics data.
-3. Evaluate learned representations against raw-expression and external foundation-model baselines.
-4. Run downstream brain evaluation, including single-cell annotation, spatial deconvolution, and AD/control disease-state prediction.
+2. Continue pretraining OmniCell-CPT on human brain CSR memmap single-cell, single-nucleus and spatial transcriptomics data.
+3. Evaluate learned representations against raw-expression and external foundation-model baselines under held-out designs.
+4. Run downstream brain evaluation, including cell annotation, spatial annotation and sample-level AD/control disease-state prediction.
 
 Large datasets, checkpoints, generated figures, and internal result folders are intentionally not committed.
 
